@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+.body {
+  background: linear-gradient(to left, #fd746c, #ff9068);
+  /* Vous êtes libre de modifier les couleurs du dégradé de fond */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Raleway, sans-serif;
+}
+.bodybody {
+  background-color: red;
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  font-family: Raleway, sans-serif;
+  animation: defilementCompletDesCouleurs 10s linear infinite;
+}
+
+@keyframes defilementCompletDesCouleurs {
+  0% {
+    background-color: red;
+  }
+  16% {
+    background-color: orange;
+  }
+  32% {
+    background-color: yellow;
+  }
+  48% {
+    background-color: green;
+  }
+  64% {
+    background-color: blue;
+  }
+  80% {
+    background-color: purple;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+h1 {
+  color: black;
+  font-size: 5vw;
+  letter-spacing: 6px;
+}
+.h1h1 {
+  animation: defilementCompletDesCouleur 7s linear infinite;
+}
+@keyframes defilementCompletDesCouleur {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* CONTENEUR DU DRUMPAD */
+/* 
+Utiliser une largeur fixe de 400px, une flexbox (les propriétés display, justify-content, flex-wrap et align-items seront utiles ici) 
+*/
+/* 
+Ajouter du padding, une couleur de fond, une bordure et pourquoi pas une ombre portée avec box-shadow 
+*/
+.pad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 420px;
+  height: 500px;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: white;
+  border: 4px solid black;
+  box-shadow: 4px 4px 0 0 black;
+  padding: 10px;
+}
+
+/* TOUCHE DU DRUMPAD */
+/* 
+Chaque touche sera un carré de 100px - largeur et hauteur 
+*/
+/* 
+Centrer les lettres dans leur touche à l'aide des propriétés de flexbox 
+*/
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 22%;
+  margin: 10px 10px;
+  box-shadow: 4px 4px 0 0 black;
+  user-select: none;
+  transform: translate(0, 0);
+  border: 4px solid black;
+  width: 100px;
+  height: 100px;
+  font-size: 25px;
+  transform: translateX(0px);
+  transform: translateY(0px);
+  flex-direction: column;
+}
+
+/* Nom du son */
+.sound {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ff9068;
+  margin-top: 7px;
+}
+
+/* Effet CSS au clic */
+.key.playing {
+  /*
+ Compléter l'animation CSS en ajoutant une transformation de type translate de 4px sur les axes X et Y 
+*/
+  transform: translateY(10px);
+  transform: translateX(10px);
+
+  background-color: #ddd;
+  box-shadow: 0 0 0 0 black;
+  border-color: #fd746c;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.key.playing .sound {
+  /*
+  Compléter l'animation CSS en ajoutant une transformation de type scale à 1,5
+*/
+  color: #fd746c;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
